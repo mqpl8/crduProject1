@@ -1,0 +1,84 @@
+{% extends "app1/layout.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>add new Item</title>
+    {% block body %}
+    <style>
+      img{
+        width:100px;
+      }
+      body {
+        text-align: center;
+        background-color:#F4F2EE;
+      }
+      form {
+        
+        background-color: white;
+        padding: 10px ;
+        display: inline-block;
+        border-radius:10px;
+        box-shadow: 0px 0px 4px black;
+      }
+      form input{
+        border-radius:10px ;
+        padding:3px;
+      }
+      .center {
+        border: 5px solid ;
+        margin: auto;
+        width: 30%;
+        padding: 10px;
+      }
+      .center {
+        border: none;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="center">
+      <form action="{% url 'app1:addform'%}" method="post" class="viewaddform">
+        {% csrf_token %}
+
+
+         {{form.name.label}}
+         <br />
+        {{form.name}}
+        <br />
+        <br />
+
+        {{form.Author.label}} 
+        <br />
+        {{form.Author}}
+        <br />
+        <br />
+
+        {{form.description.label}}
+         <br />
+        {{form.description}}
+        <br />
+        <br />
+
+        {{form.price.label}} 
+        <br />
+        {{form.price}}
+        <br />
+        <br />
+
+
+        <input type="submit" value="submit" />
+
+      </form>
+    </div>
+  </body>
+  {% endblock %}
+</html>

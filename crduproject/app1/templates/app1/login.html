@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>login</title>
+    
+        <style>
+            .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            }
+          
+            body {font-family: Arial, Helvetica, sans-serif;}
+            body {
+                text-align: center;
+                background-color:#F4F2EE;
+              }
+            
+
+            form {border: 3px solid #f1f1f1;}
+    
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                border-radius:10px ;
+                outline:none;
+            }
+    
+            button {
+                background-color: #04aa0f;
+                color: white;
+                padding: 15px 23px;
+                margin: 9px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                border-radius:10px ;
+            }
+            
+            button:hover {
+                opacity: 0.8;
+            }
+            .cancelbtn {
+                width: auto;
+                padding: 10px 19px;
+                background-color: #f71504;
+            }
+            
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+            
+            img.avatar {
+                width: 40%;
+                border-radius: 50%;
+            }
+            
+            .container {
+                padding: 16px;
+            }
+        </style>
+    
+    </head>
+    
+    
+    <body>
+        
+        {% block content %}
+            <img src="https://png.pngtree.com/template/20191125/ourmid/pngtree-book-store-logo-template-sale-learning-logo-designs-vector-image_335046.jpg" width=100px class="center">
+            <h1 align = 'center'>Login</h1>
+        
+            <form method="post" align = 'center'>
+                {% csrf_token %}
+                <div class="container">
+                <label for="username">Username:</label>
+                <input type="text" name="username" placeholder="Username" required>
+            
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Password" required>
+            
+                <button type="submit">Login</button>
+                </div>
+        
+                <div class="container" style="background-color:#f1f1f1">
+                    <a> you Don't have account ?..</a><a href='{% url  "app1:signup" %}'> Click here </a>
+                </div>
+            </form>
+        {% endblock %}

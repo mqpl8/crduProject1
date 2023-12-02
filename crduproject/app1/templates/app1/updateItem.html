@@ -1,0 +1,48 @@
+{% extends 'app1/layout.html' %}
+{% block body %}
+
+        <title>update Item</title>
+
+        <style>
+            img{
+                width:100px;
+            }
+            body {
+                text-align: center;
+                
+                
+            }
+            form {
+                display: inline-block;
+            }
+            .center {
+                border: 5px solid ;
+                margin: auto;
+                width: 30%;
+                padding: 10px;
+            }
+            .center {
+                border: none;
+                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            
+        </style>
+    
+    
+        <div class="center">
+
+            <form action='' method=POST>
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type='submit' value='Update' >
+            </form>
+            <a href="{% url 'app1:add' book.id %}">Back to info</a>
+        </div>
+    
+
+{% endblock %}

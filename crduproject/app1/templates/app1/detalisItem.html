@@ -1,0 +1,65 @@
+
+{% extends 'app1/layout.html' %}
+    {% block body %}
+            
+        <br>
+        <h1 style="text-align:center;  "> <b> {{ Books.name }} </b></h1>
+        <br>
+        
+        <ul class="list-group"> 
+
+                
+            <li class="list-group-item"> id : {{Books.id}} </li>
+            <li class="list-group-item"> Author : {{ Books.Author }} </li>
+            <li class="list-group-item"> Books Price : {{ Books.price }} SAR </li>
+            <li class="list-group-item"> Description : {{ Books.description }} </li>
+        </ul>
+
+        <br>
+
+        <div class='update' style="text-align:center; width:100%; ">
+            <a href="{% url 'app1:update' Books.id %}" style="text-align:center; border-radius:15px ;" > Update</a>
+        </div>
+
+
+            <br>
+        <div class="back">
+            <a href="{% url  'app1:Booksu' %}" style='border-radius:15px ;' >Go Back</a>
+        </div>
+
+        <form action="{% url 'app1:add' Books.id%}" method='post' style="text-align:center; width:100%; " >
+            {% csrf_token %}
+            <input style='border-radius:15px ; margin-bottom: 50px;'   type="submit" value="Add to cart" />
+        </form> 
+
+    {% endblock %}
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
